@@ -1,2 +1,2 @@
 # objective-c
-What can objective-c and the objc runtime can do without Foundation
+What can objective-c and the objc runtime do without Foundation
