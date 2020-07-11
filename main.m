@@ -6,11 +6,12 @@
 @interface Object (myadditions)
 -(void) dealloc;
 @end
+// 
+// @implementation Object (myadditions)
+// -(void) dealloc
+// {  }
+// @end
 
-@implementation Object (myadditions)
--(void) dealloc
-{ }
-@end
 
 @interface Test: Object
 {
@@ -37,6 +38,9 @@
     printf("alloc");
     id instanceId = class_createInstance(self, 0);
     return instanceId;
+    // Test *instance = class_createInstance(self, 0);
+    // instance->isa = self;
+    // return instance; 
 }
 
 -(id) init
@@ -65,7 +69,10 @@
 {
     printf("\ndealloc called\n");
     object_dispose(self);
-    [super dealloc];
+    if(NO)
+    {
+      [super dealloc];
+    }
 }
 
 -(void) hello
